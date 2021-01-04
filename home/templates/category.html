@@ -1,0 +1,81 @@
+{% extends 'home_index.html' %}
+
+
+{% block title %} {{ setting.title }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+
+{%  load static %}
+
+    <div class="wrapper bgded overlay" style="background-image:url('/static/images/demo/backgrounds/01.png');">
+  <div id="breadcrumb" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="">{{ catdata.title }}</a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+
+    <div class="wrapper row3">
+  <main class="hoc container clear">
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content">
+      <!-- ################################################################################################ -->
+      <div id="gallery">
+        <figure>
+          <header class="heading">{{ catdata.title }} Advantures</header>
+
+
+
+          <ul class="nospace group elements">
+
+              {% for advanture in advantures %}
+            <li class="{% cycle 'one_quarter first' 'one_quarter' 'one_quarter' 'one_quarter' %}">
+
+            <figure><img src="{{ advanture.image_tag2 }}" height="250" alt="">
+          <figcaption><a href="/advanture/{{ advanture.id }}/{{ advanture.slug }}">{{ advanture.title }}</a></figcaption>
+        </figure>
+            </li>
+
+              {% endfor %}
+
+          </ul>
+          <figcaption>{{ catdata.description }} Advantures</figcaption>
+        </figure>
+      </div>
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
+      <nav class="pagination">
+        <ul>
+          <li><a href="#">&laquo; Previous</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><strong>&hellip;</strong></li>
+          <li><a href="#">6</a></li>
+          <li class="current"><strong>7</strong></li>
+          <li><a href="#">8</a></li>
+          <li><a href="#">9</a></li>
+          <li><strong>&hellip;</strong></li>
+          <li><a href="#">14</a></li>
+          <li><a href="#">15</a></li>
+          <li><a href="#">Next &raquo;</a></li>
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+
+{% endblock %}

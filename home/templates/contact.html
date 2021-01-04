@@ -1,0 +1,86 @@
+{% extends 'home_index.html' %}
+
+{% block title %} {{ setting.title }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+{%  load static %}
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- üst Yol -->
+<div class="wrapper bgded overlay" style="background-image:url('/static/images/demo/backgrounds/01.png');">
+  <div id="breadcrumb" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <ul>
+        <li><a href="/">HOME</a></li>
+         <li class="active"><a href="">Contact</a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear">
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+
+<div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-contact-area">
+            <div class="aa-contact-top">
+                {{ setting.contact | safe }}
+            </div>
+           <div class="aa-contact-bottom">
+              <div class="aa-title">
+                <h2>Send Your Message</h2>
+                <span></span>
+                <p>Your email address will not be published. Required fields are marked <strong class="required">*</strong></p>
+              </div>
+              <div class="aa-contact-form">
+                  {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{message.tags}}" role="alert">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                                          <form id="checkout-form" class="clearfix" method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input type="submit" value="SEND FORM">
+                        </form>
+
+              </div>
+            </div>
+
+       </div>
+     </div>
+      </div>
+    </div>
+
+
+
+
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+
+
+
+{% endblock %}
+{% block foot %}
+
+
+
+{% endblock %}
+

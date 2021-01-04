@@ -1,0 +1,12 @@
+{% extends 'home_index.html' %}
+
+
+{% block title %} {{ setting.title }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block head %}
+
+{% endblock %}
+
+{% block slider %} {% include 'slider.html' %} {% endblock %}
+{% block body %} {% include 'content.html' %}  {% endblock %}

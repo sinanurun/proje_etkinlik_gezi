@@ -1,0 +1,49 @@
+{%  load static %}
+
+<div class="wrapper bgded overlay" style="background-image:url('/static/images/demo/backgrounds/01.png');">
+  <div id="pageintro" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <div class="flexslider basicslider">
+      <ul class="slides">
+
+          {% for slide in sliderdata %}
+        <li>
+          <article class="group">
+            <div class="one_half first">
+              <p class="uppercase">{{ slide.category }}</p>
+              <h2 class="heading">{{ slide.title }}</h2>
+              <p>{{ slide.description }}</p>
+              <p><a class="btn medium inverse" href="/advanture/{{ slide.id }}/{{ slide.slug }}">Read More &raquo;</a></p>
+            </div>
+            <div class="one_half"><a href="/advanture/{{ slide.id }}/{{ slide.slug }}"><img src="{{ slide.image.url }}" alt=""></a></div>
+          </article>
+        </li>
+          {% endfor %}
+
+{#        <li>#}
+{#          <article class="group">#}
+{#            <div class="one_half first">#}
+{#              <p class="uppercase">Cubilia curae aliquam</p>#}
+{#              <h2 class="heading">Sodales lectus rhoncus vestibulum</h2>#}
+{#              <p>Aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos nam eget dictum dui proin ac turpis pulvinar pulvinar nisl eget accumsan dolor quisque eleifend.</p>#}
+{#              <p><a class="btn medium inverse" href="#">Read More &raquo;</a></p>#}
+{#            </div>#}
+{#            <div class="one_half"><a href="#"><img src="{% static 'images/demo/slider/480x330.png ' %}" alt=""></a></div>#}
+{#          </article>#}
+{#        </li>#}
+{#        <li>#}
+{#          <article class="group">#}
+{#            <div class="one_half first">#}
+{#              <p class="uppercase">Convallis felis velit</p>#}
+{#              <h2 class="heading">Faucibus metus molestie a class</h2>#}
+{#              <p>Iaculis vestibulum dolor nunc vulputate ipsum eget placerat ipsum tellus ac urna vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>#}
+{#              <p><a class="btn medium inverse" href="#">Read More &raquo;</a></p>#}
+{#            </div>#}
+{#            <div class="one_half"><a href="#"><img src="{% static 'images/demo/slider/480x330.png ' %}" alt=""></a></div>#}
+{#          </article>#}
+{#        </li>#}
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </div>
+</div>

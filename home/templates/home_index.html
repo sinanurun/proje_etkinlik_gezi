@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>{% block title %} My Home Page {% endblock %}</title>
+    <meta name="keywords" content="{% block keywords %} Home Keywords {% endblock %}">
+    <meta name="description" content="{% block description %} Home description  {% endblock %}">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href='{{ setting.icon.url }}'/>
+     {% block head %}
+
+
+    {% endblock %}
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+{% include 'header.html' %}
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+{% block slider %} {% endblock %}
+
+{% block body %} {% endblock %}
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+{% include 'footer.html' %}
+
+
+
+{% block foot %} {% endblock %}
+
+<!-- JAVASCRIPTS -->
+<script src="{% static 'layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.flexslider-min.js' %}"></script>
+</body>
+</html>
